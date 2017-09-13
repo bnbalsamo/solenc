@@ -9,7 +9,7 @@ def readme():
 setup(
     name="solenc",
     description="An implementation of Bruce Schneier's Solitaire encryption algorithm.",
-    version="1.0.0",
+    version="1.0.1",
     long_description=readme(),
     author="Brian Balsamo",
     author_email="brian@brianbalsamo.com",
