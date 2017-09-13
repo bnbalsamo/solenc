@@ -4,7 +4,7 @@ v1.0.0
 
 [![Build Status](https://travis-ci.org/bnbalsamo/solenc.svg?branch=master)](https://travis-ci.org/bnbalsamo/solenc) [![Coverage Status](https://coveralls.io/repos/github/bnbalsamo/solenc/badge.svg?branch=master)](https://coveralls.io/github/bnbalsamo/solenc?branch=master)
 
-An implementation of Bruce Schneier's Solitaire encryption algorithm.
+An implementation of [Bruce Schneier's Solitaire encryption algorithm](https://www.schneier.com/academic/solitaire/). 
 
 
 # Usage Example
