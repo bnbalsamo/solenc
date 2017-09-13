@@ -7,7 +7,7 @@ v1.0.0
 An implementation of Bruce Schneier's Solitaire encryption algorithm.
 
 
-Usage Example
+# Usage Example
 ```
 $ solenc encrypt -d "$(solenc generate)" -k CRYPTONOMICON solitaire
 KIRAK SFJAN
@@ -18,7 +18,7 @@ $ solenc decrypt -d "$(solenc generate)" -k CRYPTONOMICON "KIRAK SFJAN"
 SOLIT AIREX
 ```
 
-
+# Syntax
 ```
 $ solenc --help
 usage: solenc [-h] [-v VERBOSITY] {encrypt,decrypt,generate,add,subtract} ...
