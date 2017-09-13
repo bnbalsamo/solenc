@@ -1,3 +1,6 @@
+"""
+solenc
+"""
 from random import shuffle as _shuffle
 from random import SystemRandom
 import string
@@ -5,6 +8,11 @@ from json import dumps, loads
 import argparse
 import logging
 from sys import stdout
+
+
+__author__ = "Brian Balsamo"
+__email__ = "brian@brianbalsamo.com"
+__version__ = "1.0.0"
 
 
 # Portions taken from: https://gist.github.com/jesux/0a2d243b3fdcc8827adf
@@ -59,8 +67,8 @@ suites = [
 offsets = {
     "Clubs": 0,
     "Diamonds": 13,
-    "Hearts": 13+13,
-    "Spades": 13+13+13
+    "Hearts": 13 + 13,
+    "Spades": 13 + 13 + 13
 }
 
 
@@ -79,7 +87,7 @@ def to_character(n):
     Convert number to letter: 1->A,  2->B, ..., 26->Z,
     27->A, 28->B, ... ad infitum
     """
-    return chr((n-1) % 26+65)
+    return chr((n - 1) % 26 + 65)
 
 
 def to_deck_value(c):
@@ -90,6 +98,7 @@ class Card:
     """
     A class for representing a playing card
     """
+
     def __init__(self, suite, value):
         self._suite = None
         self._value = None
@@ -277,8 +286,8 @@ class Deck:
         for i, x in enumerate(self._cards):
             if isinstance(x, Joker):
                 joker_indices.append(i)
-        self._cards[:] = self._cards[joker_indices[1]+1:] + \
-            self._cards[joker_indices[0]:joker_indices[1]+1] + \
+        self._cards[:] = self._cards[joker_indices[1] + 1:] + \
+            self._cards[joker_indices[0]:joker_indices[1] + 1] + \
             self._cards[0:joker_indices[0]]
 
     def count_cut(self, cut_at=None):
@@ -292,10 +301,10 @@ class Deck:
     def move_down_1(self, card):
         # If it's the last card move it to the front
         if self._cards[-1] == card:
-                x = self._cards.pop()
-                self._cards.insert(0, x)
+            x = self._cards.pop()
+            self._cards.insert(0, x)
         n = self._cards.index(card)
-        self._cards[n], self._cards[n+1] = self._cards[n+1], self._cards[n]
+        self._cards[n], self._cards[n + 1] = self._cards[n + 1], self._cards[n]
 
     def get_keynum(self):
         top_card = self._cards[0]
@@ -566,7 +575,7 @@ def main():
                 "------------------\n" +
                 "{}".format(d.to_newline_delimited_str())
             )
-        stdout.write(d.decrypt(args.message)+"\n")
+        stdout.write(d.decrypt(args.message) + "\n")
 
     # Deck generator/keyer
     elif args.subparser_name == "generate":
@@ -579,7 +588,7 @@ def main():
         if args.shuffle:
             d.shuffle()
         deck_list = d.to_newline_delimited_str()
-        stdout.write(deck_list+"\n")
+        stdout.write(deck_list + "\n")
 
     # Addition utility
     elif args.subparser_name == "add":
@@ -587,7 +596,7 @@ def main():
         m_val = lazy_value_load(args.m)
         stdout.write("{} + {}\n".format(str(n_val), str(m_val)))
         s = n_val + m_val
-        stdout.write(to_character(s)+"\n")
+        stdout.write(to_character(s) + "\n")
 
     # Subtraction utility
     elif args.subparser_name == "subtract":
@@ -595,10 +604,11 @@ def main():
         m_val = lazy_value_load(args.m)
         stdout.write("{} - {}\n".format(str(n_val), str(m_val)))
         s = n_val - m_val
-        stdout.write(to_character(s)+"\n")
+        stdout.write(to_character(s) + "\n")
 
     else:
         parser.print_help()
+
 
 if __name__ == "__main__":
     main()
