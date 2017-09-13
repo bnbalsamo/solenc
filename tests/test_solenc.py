@@ -1,4 +1,5 @@
 import unittest
+import solenc
 from solenc import Deck, format_str
 from tempfile import NamedTemporaryFile
 from random import randint, choice
@@ -6,6 +7,23 @@ import string
 
 
 class Tests(unittest.TestCase):
+    def setUp(self):
+        # Perform any setup that should occur
+        # before every test
+        pass
+
+    def tearDown(self):
+        # Perform any tear down that should
+        # occur after every test
+        pass
+
+    def testPass(self):
+        self.assertEqual(True, True)
+
+    def testVersionAvailable(self):
+        x = getattr(solenc, "__version__", None)
+        self.assertTrue(x is not None)
+
     def test_vectors(self):
         vectors = [
             {

@@ -1,3 +1,11 @@
+"""
+solenc
+"""
+
+__author__ = "Brian Balsamo"
+__email__ = "brian@brianbalsamo.com"
+__version__ = "1.0.0"
+
 from random import shuffle as _shuffle
 from random import SystemRandom
 import string
