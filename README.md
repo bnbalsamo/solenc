@@ -1,6 +1,6 @@
 # solenc
 
-v1.0.1
+v1.0.2
 
 [![Build Status](https://travis-ci.org/bnbalsamo/solenc.svg?branch=master)](https://travis-ci.org/bnbalsamo/solenc) [![Coverage Status](https://coveralls.io/repos/github/bnbalsamo/solenc/badge.svg?branch=master)](https://coveralls.io/github/bnbalsamo/solenc?branch=master)
 

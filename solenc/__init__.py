@@ -12,7 +12,7 @@ from sys import stdout
 
 __author__ = "Brian Balsamo"
 __email__ = "brian@brianbalsamo.com"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 
 # Portions taken from: https://gist.github.com/jesux/0a2d243b3fdcc8827adf
